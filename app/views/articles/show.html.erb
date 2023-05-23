@@ -1,0 +1,23 @@
+<h2>
+  <%= @article.title %>
+</h2>
+
+<p><%= @article.content %></p>
+
+
+
+<div>
+  <%= link_to edit_article_path, class:"text-decoration-none" do %>
+    <button class="btn btn-success mt-4 text-end"><i class="fa-sharp fa-solid fa-pen"></i> Edit the article</button>
+  <% end %>
+</div>
+
+<%= link_to article_path(@article), class:"text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+  <button class="btn btn-danger mt-4 text-end"><i class="fa-sharp fa-solid fa-skull-crossbones"></i> Delete the article</button>
+<% end %>
+
+<div>
+  <%= link_to articles_path do %>
+    <button class="btn btn-outline-primary mt-4 text-end">Back to articles</button>
+  <% end %>
+</div>
